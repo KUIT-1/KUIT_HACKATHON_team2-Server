@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ public class OrderItemController {
     private final OrderItemService orderItemService;
 
     @GetMapping("/orderItems")
+    @Transactional
     public ResponseEntity<List<OrderItemReadResponseDto>> getAllOrderItemByMemberId(@RequestParam(value = "memberId") Long memberId) {
         List<OrderItem> orderItems = orderItemService.findAllOrderItemByMemberId(memberId);
         List<OrderItemReadResponseDto> responseDto = orderItems.stream()
