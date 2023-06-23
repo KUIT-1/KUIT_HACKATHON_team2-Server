@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -27,5 +30,8 @@ public class OptionItem {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "option_id")
     private Option_t option;
+
+    @OneToMany(mappedBy = "optionItem")
+    List<OrderItemOption> orderItemOptions = new ArrayList<>();
 }
 

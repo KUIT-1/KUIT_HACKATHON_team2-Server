@@ -43,4 +43,6 @@ public class OrderItem {
     @OneToMany(mappedBy = "orderItem")
     List<Cart> carts = new ArrayList<>();
 
+    @OneToMany(mappedBy = "orderItem")
+    List<OrderItemOption> orderItemOptions = new ArrayList<>();
 }
