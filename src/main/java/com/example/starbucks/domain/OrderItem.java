@@ -21,9 +21,6 @@ public class OrderItem {
     @Column(name = "orderItem_id")
     private Long id;
 
-    @Column(length = 100)
-    private String name;
-
     @Column
     private int price;
 
@@ -45,7 +42,5 @@ public class OrderItem {
 
     @OneToMany(mappedBy = "orderItem")
     List<Cart> carts = new ArrayList<>();
-
-
 
 }
