@@ -1,5 +1,6 @@
 package com.example.starbucks.domain;
 
+import com.example.starbucks.dto.option.OptionItemReadResponseDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,5 +30,5 @@ public class Option_t {
     private Menu menu;
 
     @OneToMany(mappedBy = "option", cascade = CascadeType.ALL)
-    List<OptionItem> optionItems = new ArrayList<>();
+    List<OptionItemReadResponseDto> optionItems = new ArrayList<>();
 }
