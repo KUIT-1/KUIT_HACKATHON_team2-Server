@@ -1,4 +1,4 @@
-package com.example.starbucks.dto.category;
+package com.example.starbucks.dto.menu;
 
 import com.example.starbucks.domain.Menu;
 import lombok.Data;

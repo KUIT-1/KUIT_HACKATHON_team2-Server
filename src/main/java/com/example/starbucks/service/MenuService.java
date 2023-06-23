@@ -22,4 +22,8 @@ public class MenuService {
     public List<Menu> findAllMenus(Long menuId) {
         return menuRepository.findAllById(menuId);
     }
+
+    public List<Menu> findAllMenuByCategory(Long categoryId) {
+        return menuRepository.findAllByCategoryId(categoryId);
+    }
 }
