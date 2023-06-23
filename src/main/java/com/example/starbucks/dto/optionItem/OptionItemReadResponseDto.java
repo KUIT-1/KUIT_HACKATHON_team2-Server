@@ -8,10 +8,12 @@ import lombok.Getter;
 @Data
 public class OptionItemReadResponseDto {
 
+    private Long optionItemId;
     private String name;
     private int price;
 
     public OptionItemReadResponseDto(OptionItem optionItem) {
+        this.optionItemId = optionItem.getId();
         this.name = optionItem.getName();
         this.price = optionItem.getPrice();
     }

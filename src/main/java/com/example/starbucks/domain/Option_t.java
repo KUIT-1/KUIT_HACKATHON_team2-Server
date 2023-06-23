@@ -1,5 +1,6 @@
 package com.example.starbucks.domain;
 
+import com.example.starbucks.dto.optionItem.OptionItemReadResponseDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
