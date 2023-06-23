@@ -1,13 +1,12 @@
 package com.example.starbucks.dto.category;
 
-import com.example.starbucks.domain.Category;
 import com.example.starbucks.domain.Menu;
 import lombok.Data;
 import lombok.Getter;
 
 @Getter
 @Data
-public class MenuReadResponseDto {
+public class DetailMenuReadResponseDto {
     private long menuId;
     private String image;
     private String name;
@@ -27,7 +26,7 @@ public class MenuReadResponseDto {
                 .build();
     }
 
-    public MenuReadResponseDto(Menu menu) {
+    public DetailMenuReadResponseDto(Menu menu) {
         this.menuId = menu.getId();
         this.image = menu.getImage();
         this.name = menu.getName();

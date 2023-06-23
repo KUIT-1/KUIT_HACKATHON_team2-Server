@@ -1,9 +1,7 @@
 package com.example.starbucks.controller;
 
-import com.example.starbucks.domain.Category;
 import com.example.starbucks.domain.Menu;
-import com.example.starbucks.dto.category.CategoryReadResponseDto;
-import com.example.starbucks.dto.category.MenuReadResponseDto;
+import com.example.starbucks.dto.category.DetailMenuReadResponseDto;
 import com.example.starbucks.dto.category.NewMenuReadResponseDto;
 import com.example.starbucks.service.MenuService;
 import lombok.RequiredArgsConstructor;
@@ -31,10 +29,10 @@ public class MenuController {
     }
 
     @GetMapping("/{menuId}")
-    public ResponseEntity<List<MenuReadResponseDto>> getAllMenus(@PathVariable("menuId") Long menuId){
+    public ResponseEntity<List<DetailMenuReadResponseDto>> getAllMenus(@PathVariable("menuId") Long menuId){
         List<Menu> menus = menuService.findAllMenus(menuId);
-        List<MenuReadResponseDto> responseDto = menus.stream()
-                .map(MenuReadResponseDto :: new)
+        List<DetailMenuReadResponseDto> responseDto = menus.stream()
+                .map(DetailMenuReadResponseDto:: new)
                 .toList();
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }

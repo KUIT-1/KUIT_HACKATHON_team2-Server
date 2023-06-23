@@ -1,8 +1,6 @@
 package com.example.starbucks.service;
 
-import com.example.starbucks.domain.Category;
 import com.example.starbucks.domain.Menu;
-import com.example.starbucks.dto.category.MenuReadResponseDto;
 import com.example.starbucks.repository.MenuRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
