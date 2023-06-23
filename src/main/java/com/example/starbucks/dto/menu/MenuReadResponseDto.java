@@ -11,6 +11,9 @@ public class MenuReadResponseDto {
     private String image;
     private String name;
     private String eng_name;
+    private int price;
+    private String menuStatus;
+
 
     public Menu toEntity() {
         return Menu.builder()
@@ -18,6 +21,8 @@ public class MenuReadResponseDto {
                 .image(image)
                 .name(name)
                 .eng_name(eng_name)
+                .price(price)
+                .menuStatus(menuStatus)
                 .build();
     }
 
@@ -26,5 +31,7 @@ public class MenuReadResponseDto {
         this.image = menu.getImage();
         this.name = menu.getName();
         this.eng_name = menu.getEng_name();
+        this.price = menu.getPrice();
+        this.menuStatus = menu.getMenuStatus();
     }
 }
