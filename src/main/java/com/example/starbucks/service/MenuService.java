@@ -1,8 +1,6 @@
 package com.example.starbucks.service;
 
-import com.example.starbucks.domain.Category;
 import com.example.starbucks.domain.Menu;
-import com.example.starbucks.dto.category.MenuReadResponseDto;
 import com.example.starbucks.repository.MenuRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,5 +21,9 @@ public class MenuService {
 
     public List<Menu> findAllMenus(Long menuId) {
         return menuRepository.findAllById(menuId);
+    }
+
+    public List<Menu> findAllMenuByCategory(Long categoryId) {
+        return menuRepository.findAllByCategoryId(categoryId);
     }
 }
