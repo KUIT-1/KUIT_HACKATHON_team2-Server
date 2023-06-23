@@ -9,8 +9,10 @@ import java.util.List;
 
 public interface OrderItemRepository extends JpaRepository<OrderItem, Long> {
 
-    @Query("select oi from OrderItem oi " +
+    @Query("select oi, m from OrderItem oi, Menu m " +
             "join fetch oi.member " +
-            "where oi.member.id = :memberId ")
+            "join fetch oi.menu " +
+            "where oi.member.id = :memberId " +
+            "and oi.menu.id = m.id ")
     List<OrderItem> findAllByMemberId(@Param("memberId") Long memberId);
 }
