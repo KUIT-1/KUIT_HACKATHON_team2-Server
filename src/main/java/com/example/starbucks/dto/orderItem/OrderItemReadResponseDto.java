@@ -1,19 +1,11 @@
 package com.example.starbucks.dto.orderItem;
 
-<<<<<<< HEAD
-import com.example.starbucks.domain.OptionItem;
-=======
-import com.example.starbucks.domain.Menu;
->>>>>>> 426e7ae752c14696d6d3c233fc49370d73da9a60
+
 import com.example.starbucks.domain.OrderItem;
 import com.example.starbucks.domain.OrderItemOption;
 import com.example.starbucks.dto.optionItem.OptionItemReadResponseDto;
 import lombok.Data;
 import lombok.Getter;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 import java.util.List;
 
