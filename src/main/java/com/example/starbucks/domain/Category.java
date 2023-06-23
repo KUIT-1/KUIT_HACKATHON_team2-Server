@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,9 @@ public class Category {
 
     @Column(length = 100)
     private String eng_name;
+
+    @ColumnDefault("1")
+    private int category_type;
 
     @OneToMany(mappedBy = "category")
     List<Menu> menus = new ArrayList<>();

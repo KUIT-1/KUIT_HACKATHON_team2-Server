@@ -2,6 +2,8 @@ package com.example.starbucks.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +35,9 @@ public class Menu {
 
     @Column(length = 100)
     private int price;
+
+    @Column
+    private String menuStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
