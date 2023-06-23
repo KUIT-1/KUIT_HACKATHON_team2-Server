@@ -17,8 +17,11 @@ import java.util.List;
 public class MenuService {
     private final MenuRepository menuRepository;
 
-
     public List<Menu> findAllNewMenus(String menuStatus) {
         return menuRepository.findAllByMenuStatus(menuStatus);
+    }
+
+    public List<Menu> findAllMenus(Long menuId) {
+        return menuRepository.findAllById(menuId);
     }
 }
