@@ -40,9 +40,7 @@ public class OrderItem {
     @JoinColumn(name = "menu_id")
     private Menu menu;
 
-    @OneToMany(mappedBy = "orderItem")
-    List<Cart> carts = new ArrayList<>();
-
-    @OneToMany(mappedBy = "orderItem")
-    List<OrderItemOption> orderItemOptions = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 }
